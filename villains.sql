@@ -1,45 +1,36 @@
 CREATE DATABASE disney;
 
+CREATE USER'villains'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Vi11Ains!';
+
+GRANT ALL ON disney.*TO'villains'@'localhost';
+
 USE disney;
 
-
 CREATE TABLE villains (
-    id INT AUTO_INCREMENT,
-    name VARCHAR(255),
-    movie VARCHAR(255),
-    slug VARCHAR(255),
- 	createdAt DATETIME DEFAULT NOW(),
-    updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
-    deletedAt DATETIME,
-    PRIMARY KEY (id)
+id INT auto_increment,
+name  VARCHAR(255),
+movie VARCHAR(255),
+slug VARCHAR(255),
+createdAt DATETIME DEFAULT NOW(),
+updatedAt DATETIME DEFAULT NOW() ON UPDATE NOW(),
+deletedAt DATETIME,
+PRIMARY KEY(id)
 );
-
-SHOW TABLES;
-
-DESC villains;
-
-INSERT INTO villains (name, movie, slug) VALUES
- ('Captain Hook','Peter Pan','captain-hook'),
- ('Cruella de Vil','One Hundred and One Dalmatians','cruella-de-vil'),
- ('Gaston','Beauty and the Beast','gaston'),
- ('Hades','Hercules','hades'),
- ('Horned King','The Black Cauldron','horned-king'),
- ('Jafar','Aladdin','jafar'),
- ('Lady Tremaine','Cinderella','lady-tremaine'),
- ('Madame Medusa','The Rescuers','madame-medusa'),
-('Madam Mim','The Sword in the Stone','madam-mim'),
-('Maleficent','Sleeping Beauty','maleficent'),
-('Prince John','Robin Hood','prince-john'),
-('Sir Hiss','Robin Hood','sir-hiss'),
-('Queen Grimhilde','Snow White and the Seven Dwarfs','queen-grimhilde'),
-('Queen of Hearts','Alice in Wonderland','queen-of-hearts'),
-('Scar','The Lion King','scar'),
-('Shan Yu','Mulan','shan-yu'),
-('Shere Khan','The Jungle Book','shere-khan'),
-('Ursula','The Little Mermaid','ursula');
-
-SELECT * from villains;
-
-
-
-GRANT ALL ON disney.* TO 'villains'@'localhost';
+INSERT INTO villains( name, movie, slug) VALUES ('Captain Hook', 'Peter Pan', 'captain-hook'); 
+INSERT INTO villains( name, movie, slug) VALUES ('Cruella-de-Vil', 'One Hundred and One Dalmatians', 'cruella-de-vil');
+INSERT INTO villains( name, movie, slug) VALUES ('Gaston', 'Beauty and the Beast', 'gaston');
+INSERT INTO villains( name, movie, slug) VALUES ('Hades', 'Hercules', 'hades');
+INSERT INTO villains( name, movie, slug) VALUES ('Horned King', 'The Black Cauldron', 'horned-king');
+INSERT INTO villains( name, movie, slug) VALUES ('Jafar', 'Aladdin', 'jafar');
+INSERT INTO villains( name, movie, slug) VALUES ('Lady Tremaine', 'Cinderella', 'lady-tremaine');
+INSERT INTO villains( name, movie, slug) VALUES ('Madame Medusa', 'The Rescuers', 'madame-medusa');
+INSERT INTO villains( name, movie, slug) VALUES ('Madam Mim', 'The Sword in the Stone', 'madam-mim');
+INSERT INTO villains( name, movie, slug) VALUES ('Maleficent', 'Sleeping Beauty', 'maleficent');
+INSERT INTO villains( name, movie, slug) VALUES ('Prince John', 'Robin Hood', 'prince-john');
+INSERT INTO villains( name, movie, slug) VALUES ('Sir Hiss', 'Robin Hood', 'sir-hiss');
+INSERT INTO villains( name, movie, slug) VALUES ('Queen Grimhilde', 'Snow White and the Seven Dwarfs', 'queen-grimhilde');
+INSERT INTO villains( name, movie, slug) VALUES ('Queen of Hearts', 'Alice In Wonderland', 'queen-of-hearts');
+INSERT INTO villains( name, movie, slug) VALUES ('Scar', 'The Lion King', 'scar');
+INSERT INTO villains( name, movie, slug) VALUES ('Shan Yu', 'Mulan', 'shan-yu');
+INSERT INTO villains( name, movie, slug) VALUES ('Shere Khan', 'The Jungle Book', 'shere-khan');
+INSERT INTO villains( name, movie, slug) VALUES ('Ursula', 'The Little Mermaid', 'ursula');
